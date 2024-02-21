@@ -1,27 +1,27 @@
-import { useState } from 'react'
-
+import {
+  Box,
+  Container,
+  Heading,
+  useColorMode,
+  Button,
+} from "@chakra-ui/react";
+import { useState } from "react";
+import { HexColorPicker } from "components/index";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const { colorMode, toggleColorMode } = useColorMode();
 
   return (
-    <>
-
-
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <Box backgroundColor={colorMode === "dark" ? "black" : "white"}>
+      <Container>
+        <Button onClick={toggleColorMode}>
+          Toggle {colorMode === "light" ? "Dark" : "Light"}
+        </Button>
+        <Heading>Color Picker</Heading>
+        <HexColorPicker />
+      </Container>
+    </Box>
+  );
 }
 
-export default App
+export default App;
