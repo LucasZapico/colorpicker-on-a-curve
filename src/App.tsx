@@ -1,27 +1,16 @@
-import { useState } from 'react'
-
+import { Container, Heading, Box, Text, Link } from "@chakra-ui/react";
+import { useState } from "react";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-
-
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <Box py={20}>
+      <Container maxW="container.xl">
+        <Heading size="lg">WIP: Color Picker on a curve</Heading>
+        <Text>This project is temp on hold as it was a little bigger then the few hours I allotted. </Text>
+        <Text>This was apparent when digging through the <Link href="https://github.com/omgovich/react-colorful">React colorful repo</Link></Text>
+      </Container>
+    </Box>
+  );
 }
 
-export default App
+export default App;
